@@ -25,7 +25,7 @@ class GuessesController < ApplicationController
   # POST /guesses or /guesses.json
   def create
     @guess = Guess.new(guess_params)
-    @guess.save
+    @guess.save!
     @round = Guess.where(game_session_id: @guess[:game_session_id]).count
     @score = WordsDifference.call(guessed_word: @guess.guessed_word, target_word: @guess.game_session.word)
     @guess.game_session.score = (6-@round)*20  if @score.sum == 10

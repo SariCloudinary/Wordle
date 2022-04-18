@@ -1,6 +1,4 @@
 <p style="color: green"><%= notice %></p>
-<p style="color: red"><%= flash[:mishmish] %></p>
-
 <h3>Welcome to Cloududle</h3>
 
 <%= link_to "New user", new_user_path %>
@@ -18,6 +16,7 @@
 </div>
 
 <br>
+<p style="color: red"><%= flash[:warning] %></p>
 <div>
   <%= form_with url: "/home/new_game", method: :post do |form| %>
     <%= form.label :query, "Whom would you like to play with?" %>
