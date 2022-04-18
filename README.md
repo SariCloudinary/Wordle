@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very "light" version of the woordle game.\
+Purpose of the game is to guess a secret word of 5 letters in max 5 tries.\
+Player will enter a 5 letter word and as a response will get 
+an array with indication on each given letter:\
+0 - this letter does not exist in the secret word\
+1 - this letter exists in the secret word but it isn't in the right spot\
+2 - this letter exists in the secret word and it is in the right spot\
 
-Things you may want to cover:
+For example: 
+secret word is MAPLE
 
-* Ruby version
+* First try: TABLE will result [0,2,0,2,2]
+* Second try: PADLE will result [1,2,0,2,2]
+* Third try: MAPLE will result [2,2,2,2,2] => end of game session
 
-* System dependencies
+If player will guess the word on 1st try he will get 100 point\
+2nd try => 80 point\
+3rd try => 60 point\
+4th try => 40 point\
+5th try => 20 point\
+No guess => 0 points
 
-* Configuration
+* Ruby version: 3.1.1p18
+* Rails       : 7.0.2.3
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Model:
+![img.png](img.png)
