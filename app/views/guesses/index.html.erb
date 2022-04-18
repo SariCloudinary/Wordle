@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Guesses</h1>
+
+<div id="guesses">
+  <% @guesses.each do |guess| %>
+    <%= render guess %>
+    <p>
+      <%= link_to "Show this guess", guess %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New guess", new_guess_path %>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guess %>
+score is: <%= params[:score] %>
+<div>
+
+  <% if params[:score].sum == "22222" %>
+    <strong style="color:blue">Congratulations! you made it!</strong>
+  <% elsif params[:round].to_i == 5 %>
+    <strong style="color:red">No more tries (5 out of 5 were used)</strong>
+  <% else %>
+    <%= link_to "Try new guess", new_guess_path(game_session_id:@guess.game_session_id, user_id: @guess.user_id) %> |
+  <% end %>
+  <%= link_to "Back to home", "/" %> |
+  <%= form_with url: "/home/new_game?user_id="+ @guess.user.id.to_s, method: :post do |form| %>
+    <%= form.submit "Start New Game" %>
+  <% end %>
+</div>

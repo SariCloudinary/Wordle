@@ -1,0 +1,6 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <%= user.name %> - <%= user.game_sessions.inject(0) { |sum, x| sum += x.score } %> points
+  </p>
+
+</div>

@@ -1,0 +1,22 @@
+<div id="<%= dom_id guess %>">
+
+  <strong>Current result for  <%= guess.user.name %></strong>
+  <p>
+    <strong>Total rounds: </strong> <%= params[:round] %>
+  </p>
+
+  <p>
+    <strong>result:</strong>
+    <!--< get_result guess %>-->
+  </p>
+
+  <p>
+    <strong>Guessed word:</strong>
+    <%= guess.guessed_word %>
+  </p>
+  <p>
+    <strong>User:</strong>
+    <%= guess.user.name %>
+  </p>
+
+</div>
